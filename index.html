@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avengers - Black Widow</title>
+    <style>
+      body {
+        background-color: rgb(55, 55, 55);
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100vh;
+        margin: 0;
+      }
+      /* ------- NAV ------ */
+      .nav-container {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 75px;
+        display: flex;
+        z-index: 1;
+      }
+
+      .nav-logo {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        bottom: 0;
+        color: white;
+        font-weight: 600;
+      }
+
+      .nav-logo img {
+        height: 55px;
+      }
+      .nav-list {
+        position: absolute;
+        right: 30px;
+        display: flex;
+      }
+      .nav-list > li {
+        list-style-type: none;
+        text-align: end;
+        width: 75px;
+        height: 100%;
+        color: white;
+        font-size: 15px;
+        font-weight: bolder;
+      }
+      .nav-list li a {
+        color: inherit;
+        text-decoration: none;
+      }
+      @media all and (max-width: 500px) {
+        .nav-logo {
+          color: purple;
+        }
+      }
+
+      /*------FOOTER-------*/
+      .footer-container {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        flex-direction: row;
+      }
+      .footer-logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+      }
+
+      .footer-logo {
+        color: white;
+        font-size: 12px;
+      }
+
+      .footer-list > li {
+        display: inline-block;
+        font-size: 12px;
+        color: white;
+      }
+
+      .footer-list li a {
+        color: inherit;
+        text-decoration: none;
+      }
+      /*---MAIN-CONTENT----*/
+
+			#main-content {
+				display: flex;
+				flex-direction: column;
+			}
+      /*-------HERO--------*/
+      .hero-container {
+
+      }
+
+      .hero-container img {
+        width: 100%;
+        margin: 0;
+      }
+
+      .hero-container-text {
+        display: flex;
+        flex-direction: column;
+        right: 30px;
+        bottom: 40%;
+        text-align: center;
+      }
+
+      .hero-container-text > h1 {
+        color: white;
+        font-size: 60px;
+      }
+
+      .hero-container-text * {
+        margin: 0;
+      }
+
+      .image-source {
+        color: white;
+        font-size: 15px;
+        text-align: end;
+      }
+
+      .image-source a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @media all and (max-width: 700px) {
+        .hero-container-text h1 {
+          font-size: 1.875em;
+        }
+        .image-source {
+          color: white;
+          font-size: 0.75em;
+          text-align: end;
+        }
+      }
+
+      /*--- CONTENT AREA---*/
+
+      .content-area1-container {
+        border: 10px solid pink;
+        height: 300px;
+        display: block;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="nav-container">
+      <div class="nav-logo-container">
+        <span class="nav-logo"
+          ><a href="#"><img src="assets/black-widow-logo2.png" /></a
+        ></span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="#">home</a></li>
+        <li><a href="#">gallery</a></li>
+        <li><a href="#">spec</a></li>
+        <li><a href="#">about</a></li>
+      </ul>
+      <div class="nav-icon"></div>
+    </nav>
+    <main id="main-content">
+      <!---HERO---->
+      <section>
+        <div class="hero-container">
+          <div class="hero-container-text">
+            <h1>BLACK WIDOW</h1>
+            <div class="image-source">
+              artwork by <a href="https://www.andyparkart.com/">andy park</a>
+            </div>
+          </div>
+          <img src="assets/black-widow-andy-park2.jpeg" />
+        </div>
+      </section>
+      <!---CONTENT AREA 1--->
+      <section>
+        <div class="content-area1-container">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+          ullam dolores placeat, doloremque autem corrupti nesciunt dolore cum
+          eius, perspiciatis amet! Labore necessitatibus neque eos unde ea
+          blanditiis voluptatum dolore incidunt eveniet rerum nisi cumque
+          ducimus aspernatur reprehenderit id architecto, molestias quo ex
+          officia quibusdam veniam doloribus! Pariatur, vel ratione.
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footer-container">
+      <div class="footer-logo-container">
+        <span class="footer-logo">logo</span>
+      </div>
+      <section>
+        <ul class="footer-list">
+          <li><a href="#">careers</a></li>
+          <li><a href="#">press</a></li>
+          <li><a href="#">avengers</a></li>
+          <li><a href="#">marvel</a></li>
+        </ul>
+      </section>
+    </footer>
+    <script></script>
+  </body>
+</html>
