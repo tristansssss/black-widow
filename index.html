@@ -93,21 +93,31 @@
       }
       /*---MAIN-CONTENT----*/
 
-			#main-content {
-				display: flex;
-				flex-direction: column;
-			}
+      #main-content {
+        display: flex;
+        flex-direction: column;
+      }
       /*-------HERO--------*/
       .hero-container {
-
+        position: relative;
       }
 
-      .hero-container img {
-        width: 100%;
+      .hero-image-container {
+        height: 100vh;
+        width: auto;
         margin: 0;
+				overflow: hidden;
+				border: 5px solid pink;
       }
+
+			.hero-image-container img {
+				height: 100%;
+				width: auto;
+
+			}
 
       .hero-container-text {
+        position: absolute;
         display: flex;
         flex-direction: column;
         right: 30px;
@@ -137,17 +147,24 @@
 
       @media all and (max-width: 700px) {
         .hero-container-text h1 {
-          font-size: 1.875em;
+          font-size: 2em;
         }
         .image-source {
           color: white;
           font-size: 0.75em;
           text-align: end;
         }
+        .hero-container img {
+          height: 100vh;
+          width: auto;
+          position: absolute;
+          right: -50;
+          overflow: hidden;
+          margin: 0;
+        }
       }
 
       /*--- CONTENT AREA---*/
-
       .content-area1-container {
         border: 10px solid pink;
         height: 300px;
@@ -172,6 +189,7 @@
       </ul>
       <div class="nav-icon"></div>
     </nav>
+    <!----MAIN CONTENT---->
     <main id="main-content">
       <!---HERO---->
       <section>
@@ -182,7 +200,9 @@
               artwork by <a href="https://www.andyparkart.com/">andy park</a>
             </div>
           </div>
-          <img src="assets/black-widow-andy-park2.jpeg" />
+          <div class="hero-image-container">
+            <img src="assets/black-widow-andy-park2.jpeg" />
+          </div>
         </div>
       </section>
       <!---CONTENT AREA 1--->
