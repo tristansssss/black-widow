@@ -5,7 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avengers - Black Widow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="shortcut icon" href="assets/black-widow-logo.png" />
     <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
       body {
         background-color: rgb(55, 55, 55);
         box-sizing: border-box;
@@ -43,7 +92,7 @@
         right: 30px;
         display: flex;
       }
-      .nav-list > li {
+      .nav-list li {
         list-style-type: none;
         text-align: end;
         width: 75px;
@@ -56,10 +105,45 @@
         color: inherit;
         text-decoration: none;
       }
-      @media all and (max-width: 500px) {
-        .nav-logo {
-          color: purple;
-        }
+
+      .nav-icon-container {
+        display: none;
+      }
+
+      #nav-icon {
+        width: 40px;
+        height: 25px;
+        position: relative;
+        margin: 50px auto;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        margin-right: 25px;
+      }
+
+      #nav-icon span {
+        display: block;
+        position: absolute;
+        height: 9px;
+        width: 100%;
+        background: #d3531a;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
       }
 
       /*------FOOTER-------*/
@@ -143,27 +227,137 @@
         text-decoration: none;
       }
 
+      /*--- CONTENT AREA---*/
+      .content-area1-container {
+        border: 10px solid pink;
+        height: 300px;
+        display: block;
+      }
+
       @media all and (max-width: 1024px) {
+        /* -------ICON------------*/
+
+        #nav-icon span:nth-child(1) {
+          top: 0px;
+        }
+
+        #nav-icon span:nth-child(2),
+        #nav-icon span:nth-child(3) {
+          top: 18px;
+        }
+
+        #nav-icon span:nth-child(4) {
+          top: 36px;
+        }
+
+        #nav-icon.open span:nth-child(1) {
+          top: 18px;
+          width: 0%;
+          left: 50%;
+        }
+
+        #nav-icon.open span:nth-child(2) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+        #nav-icon.open span:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+
+        #nav-icon.open span:nth-child(4) {
+          top: 18px;
+          width: 0%;
+          left: 50%;
+        }
+
+        /*--------NAV CONTAINER_----*/
+        .nav-list {
+          display: none;
+        }
+
+        .nav-icon-container {
+          display: block;
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+        }
+
+        /*---NAV CONTAINER RESPONSIVE-- */
+
+        .nav-list.responsive {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 75px;
+          margin: 0;
+        }
+
+        .nav-list.responsive li {
+          width: 100%;
+          text-align: right;
+					padding-top: 45px;
+          padding-right: 45px;
+          height: 100px;
+          font-size: xx-large;
+					animation: fadeIn 1s;
+					-webkit-animation: fadeIn 1s;
+					-moz-animation: fadeIn 1s;
+					-o-animation: fadeIn 1s;
+					-ms-animation: fadeIn 1s;
+					transition: all .3s ease-in-out;
+        }
+				.nav-list.responsive li:hover{
+					transform: translate(-40px) scale(1.1);
+				}
+				
+        .overlay.responsive {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.9);
+          z-index: -1;
+					animation: fadeIn 1s;
+					-webkit-animation: fadeIn 1s;
+					-moz-animation: fadeIn 1s;
+					-o-animation: fadeIn 1s;
+					-ms-animation: fadeIn 1s;
+				}
+        
+
         /* -----HERO CONTAINER------*/
         .hero-image-container {
           position: relative;
           overflow-x: hidden;
-					z-index: -1;
+          z-index: -1;
         }
         .hero-image-container > img {
           height: 100vh;
           width: auto;
           position: absolute;
-          left: -500px;
+          left: -800px;
           margin: 0;
         }
 
-        .hero-container-text  {
+        .hero-container-text {
           font-size: 0.75;
         }
-
-
-
         .image-source {
           color: white;
           font-size: 0.75em;
@@ -171,30 +365,45 @@
         }
       }
 
-      /*--- CONTENT AREA---*/
-      .content-area1-container {
-        border: 10px solid pink;
-        height: 300px;
-        display: block;
+      @media all and (max-width: 375px) {
+        .hero-container-text {
+          font-size: 0.75;
+          position: absolute;
+          left: 0;
+          right: 0;
+        }
+        .image-source {
+          text-align: center;
+        }
       }
     </style>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- NAVIGATION -->
-    <nav class="nav-container">
+    <nav class="nav-container" id="nav-container">
       <div class="nav-logo-container">
         <span class="nav-logo"
           ><a href="#"><img src="assets/black-widow-logo2.png" /></a
         ></span>
       </div>
-      <ul class="nav-list">
+      <ul class="nav-list" id="nav-list">
         <li><a href="#">home</a></li>
         <li><a href="#">gallery</a></li>
         <li><a href="#">spec</a></li>
         <li><a href="#">about</a></li>
       </ul>
-      <div class="nav-icon"></div>
+      <div class="nav-icon-container" id="nav-icon-container">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <!-- <i class="fa fa-bars"></i> -->
+          <div id="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+      </div>
+      <div class="overlay" id="overlay"></div>
     </nav>
     <!----MAIN CONTENT---->
     <main id="main-content">
@@ -239,6 +448,22 @@
         </ul>
       </section>
     </footer>
-    <script></script>
+    <script>
+      function myFunction() {
+        let x = document.getElementById("nav-list");
+        let y = document.getElementById("overlay");
+        let z = document.getElementById("nav-icon");
+        if (x.className === "nav-list") {
+          console.log("its nav list");
+          x.className += " responsive";
+          y.className += " responsive";
+          z.classList.add("open");
+        } else {
+          x.className = "nav-list";
+          y.className = "overlay";
+          z.classList.remove("open");
+        }
+      }
+    </script>
   </body>
 </html>
